@@ -8,15 +8,34 @@
  * directories exist, then starts the HTTP server with graceful
  * shutdown handlers.
  *
- * Hostinger note: migrations are run by the "prestart" npm lifecycle
- * hook (see package.json) so the schema is fully applied BEFORE this
- * process binds a port. The server listens on the platform-assigned
- * PORT so Hostinger's reverse proxy can route to it (prevents 503).
+ * Hostinger note: hPanel launches this entry file (server.js) directly and
+ * ignores the package.json "start" script, so npm lifecycle hooks never run.
+ * To guarantee the schema exists, we run the migration script programmatically
+ * and synchronously HERE - before any routes are mounted or DB queries execute.
+ * The server then listens on the platform-assigned PORT so Hostinger's reverse
+ * proxy can route to it (prevents the boot-time 503).
  */
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 const express = require('express');
+
+// ---------------------------------------------------------------------------
+// Programmatic database migration (runs on every boot, idempotent).
+// Placed at the very top, before requiring the app/db modules issue any query.
+// `cwd: __dirname` ensures the relative migrate.js path resolves regardless of
+// the working directory hPanel uses to launch the process. A migration failure
+// is logged but NON-fatal so the server can still come up (and surface a clear
+// DB health-check error) rather than leaving the port unbound.
+// ---------------------------------------------------------------------------
+try {
+  console.log('Hostinger environment detected: Running database migrations...');
+  execSync('node database/migrate.js up', { stdio: 'inherit', cwd: __dirname });
+  console.log('✅ Database migrations executed successfully.');
+} catch (error) {
+  console.error('❌ Migration failed during programmatic startup:', error.message);
+}
 
 const env = require('./src/config/env');
 const logger = require('./src/utils/logger');
