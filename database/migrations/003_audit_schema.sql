@@ -1,5 +1,5 @@
 -- ============================================================================
--- Divya Moolya HRMS & Payroll  ::  003_audit_schema.sql
+-- Euro-Trousers HRMS & Payroll  ::  003_audit_schema.sql
 -- ----------------------------------------------------------------------------
 -- Module 1 (Audit Trails) + Module 13 (Security). These tables back the
 -- auditService writers (recordAudit / recordSecurity / recordLogin) and the

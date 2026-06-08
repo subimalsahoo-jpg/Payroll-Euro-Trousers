@@ -46,7 +46,7 @@ async function generatePayslip(ctx) {
     doc.fillColor('#FFFFFF').fontSize(22).font('Helvetica-Bold')
       .text('EURO-TROUSERS', 48, 28);
     doc.fontSize(10).font('Helvetica')
-      .text('Divya Moolya HRMS & Payroll', 48, 56)
+      .text('Euro-Trousers HRMS & Payroll', 48, 56)
       .text('Dubai, United Arab Emirates', 48, 70);
     doc.fontSize(16).font('Helvetica-Bold')
       .text('SALARY SLIP', 0, 34, { align: 'right', width: doc.page.width - 48 });
@@ -151,7 +151,7 @@ async function generatePayslip(ctx) {
     doc.text('Authorized Signatory (HR / Finance)', 305, footY + 110);
 
     doc.fontSize(7).fillColor(GRAY)
-      .text('This is a system-generated document from Divya Moolya HRMS & Payroll. Identity numbers are masked for privacy.',
+      .text('This is a system-generated document from Euro-Trousers HRMS & Payroll. Identity numbers are masked for privacy.',
         48, doc.page.height - 60, { width: doc.page.width - 96, align: 'center' });
 
     doc.end();

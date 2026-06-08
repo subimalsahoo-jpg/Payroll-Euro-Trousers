@@ -38,7 +38,7 @@ const env = {
   app: {
     env: process.env.NODE_ENV || 'development',
     port: int('PORT', 3000),
-    name: process.env.APP_NAME || 'Divya Moolya HRMS & Payroll',
+    name: process.env.APP_NAME || 'Euro-Trousers HRMS & Payroll',
     company: process.env.APP_COMPANY || 'Euro-Trousers',
     url: process.env.APP_URL || 'http://localhost:3000',
     get isProd() {
@@ -91,7 +91,7 @@ const env = {
     secure: bool('SMTP_SECURE', false),
     user: process.env.SMTP_USER || '',
     password: process.env.SMTP_PASSWORD || '',
-    from: process.env.MAIL_FROM || 'Divya Moolya HRMS <no-reply@example.com>',
+    from: process.env.MAIL_FROM || 'Euro-Trousers HRMS <no-reply@example.com>',
   },
 
   wps: {

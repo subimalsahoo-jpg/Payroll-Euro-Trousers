@@ -1,5 +1,5 @@
 -- ============================================================================
--- Divya Moolya HRMS & Payroll  ::  002_operations_schema.sql
+-- Euro-Trousers HRMS & Payroll  ::  002_operations_schema.sql
 -- ----------------------------------------------------------------------------
 -- Operational tables: Attendance (3), Leave (4), Payroll (5),
 -- Salary Processing (6), Salary Slips (7), Documents (14),

@@ -1,5 +1,5 @@
 -- ============================================================================
--- Divya Moolya HRMS & Payroll  ::  001_core_schema.sql
+-- Euro-Trousers HRMS & Payroll  ::  001_core_schema.sql
 -- ----------------------------------------------------------------------------
 -- Target: MySQL 8.0+ (InnoDB, utf8mb4). Fully normalised with explicit
 -- foreign keys, performance indexes and strict data types. Money stored as

@@ -1,4 +1,4 @@
-# Divya Moolya HRMS & Payroll — Euro-Trousers
+# Euro-Trousers HRMS & Payroll — Euro-Trousers
 
 A production-structured **Enterprise HRMS & Payroll Management System** for **Euro-Trousers**, optimised for **UAE / Dubai** corporate compliance. Built on a clean **Node.js 20+ / Express (MVC)** backend, **MySQL 8** (fully normalised, ACID transactions), and a dependency-light **glassmorphism single-page frontend** (vanilla ES6 + Chart.js).
 

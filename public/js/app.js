@@ -57,7 +57,7 @@ window.APP = (function () {
         <form class="glass auth-card" id="loginForm">
           <div class="brand">
             <div class="logo">ET</div>
-            <div><h1>Divya Moolya HRMS & Payroll</h1><small>Euro-Trousers · UAE</small></div>
+            <div><h1>Euro-Trousers HRMS & Payroll</h1><small>Euro-Trousers · UAE</small></div>
           </div>
           <p class="muted" style="margin:8px 0 20px">Sign in to your account</p>
           ${message ? `<div class="badge red" style="display:block;margin-bottom:14px;padding:10px">${UI.esc(message)}</div>` : ''}
@@ -96,7 +96,7 @@ window.APP = (function () {
     document.getElementById('app').innerHTML = `
       <div class="shell">
         <aside class="sidebar glass" id="sidebar">
-          <div class="brand"><div class="logo">ET</div><div><h1 style="font-size:15px">Divya Moolya</h1><small>HRMS & Payroll</small></div></div>
+          <div class="brand"><div class="logo">ET</div><div><h1 style="font-size:15px">Euro-Trousers</h1><small>HRMS & Payroll</small></div></div>
           <div class="nav-section">Menu</div>
           ${navItems}
         </aside>

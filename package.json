@@ -1,21 +1,17 @@
 {
-  "name": "divya-moolya-hrms-payroll",
+  "name": "euro-trousers-hrms-payroll",
   "version": "1.0.0",
-  "description": "Divya Moolya HRMS & Payroll - Enterprise HRMS and Payroll Management System for Euro-Trousers (UAE/Dubai compliant)",
+  "description": "Euro-Trousers HRMS & Payroll - Enterprise HRMS and Payroll Management System (UAE/Dubai compliant)",
   "main": "server.js",
   "type": "commonjs",
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
+    "prestart": "node database/migrate.js up",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "migrate": "node database/migrate.js up",
-    "migrate:fresh": "node database/migrate.js fresh",
-    "seed": "node database/migrate.js seed",
-    "setup": "node database/migrate.js fresh && node database/migrate.js seed",
-    "lint": "eslint .",
-    "check": "node scripts/syntax-check.js"
+    "setup": "node database/migrate.js fresh && node database/migrate.js seed"
   },
   "keywords": [
     "hrms",

@@ -1,5 +1,5 @@
 -- ============================================================================
--- Divya Moolya HRMS & Payroll  ::  seed.sql
+-- Euro-Trousers HRMS & Payroll  ::  seed.sql
 -- ----------------------------------------------------------------------------
 -- Compliant MOCK dataset for Euro-Trousers. Sensitive identity numbers use
 -- MASKED structural placeholders only (e.g. '784-XXXX-XXXXXXX-X'). No real
@@ -212,7 +212,7 @@ ON DUPLICATE KEY UPDATE amount = VALUES(amount);
 -- ---- Announcements ----
 INSERT INTO announcements (company_id, title, body, published_at, is_published, created_by)
 VALUES
-  (1, 'Welcome to Divya Moolya HRMS', 'The new HRMS & Payroll portal is now live for all Euro-Trousers staff.', NOW(), 1, NULL)
+  (1, 'Welcome to Euro-Trousers HRMS', 'The new HRMS & Payroll portal is now live for all Euro-Trousers staff.', NOW(), 1, NULL)
 ON DUPLICATE KEY UPDATE title = VALUES(title);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -23,7 +23,7 @@ const SUPER_ADMIN = 'SUPER_ADMIN';
 function signToken(payload) {
   return jwt.sign(payload, env.security.jwtSecret, {
     expiresIn: env.security.jwtExpiresIn,
-    issuer: 'divya-moolya-hrms',
+    issuer: 'euro-trousers-hrms',
   });
 }
 

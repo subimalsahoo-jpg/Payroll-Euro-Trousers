@@ -1,16 +1,22 @@
 'use strict';
 
 /**
- * Divya Moolya HRMS & Payroll - process entrypoint.
+ * Euro-Trousers HRMS & Payroll - process entrypoint.
  * -------------------------------------------------------------
  * Stateless, cluster-ready bootstrap suitable for Hostinger
  * Application Manager. Performs a DB health check, ensures storage
  * directories exist, then starts the HTTP server with graceful
  * shutdown handlers.
+ *
+ * Hostinger note: migrations are run by the "prestart" npm lifecycle
+ * hook (see package.json) so the schema is fully applied BEFORE this
+ * process binds a port. The server listens on the platform-assigned
+ * PORT so Hostinger's reverse proxy can route to it (prevents 503).
  */
 
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
 
 const env = require('./src/config/env');
 const logger = require('./src/utils/logger');
@@ -46,8 +52,18 @@ async function start() {
     }
 
     const app = createApp();
-    const server = app.listen(env.app.port, () => {
-      logger.info(`${env.app.name} listening on port ${env.app.port} [${env.app.env}]`);
+
+    // Serve the glassmorphism frontend assets out of the box. The static
+    // mount also lives in the app factory (src/app.js, correctly ordered
+    // before the SPA fallback); this explicit mount documents the intent
+    // at the boot layer and guarantees /public is served on Hostinger.
+    app.use(express.static(path.join(__dirname, 'public')));
+
+    // Dynamic port: Hostinger's web proxy assigns the internal port via
+    // process.env.PORT. Falling back to 3000 for local development.
+    const PORT = process.env.PORT || 3000;
+    const server = app.listen(PORT, () => {
+      logger.info(`${env.app.name} listening on port ${PORT} [${env.app.env}]`);
       logger.info(`Open ${env.app.url}`);
     });
 

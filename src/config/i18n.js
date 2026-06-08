@@ -14,7 +14,7 @@ const env = require('./env');
 const dictionaries = {
   en: {
     direction: 'ltr',
-    app_name: 'Divya Moolya HRMS & Payroll',
+    app_name: 'Euro-Trousers HRMS & Payroll',
     company: 'Euro-Trousers',
     dashboard: 'Dashboard',
     employees: 'Employees',
@@ -49,7 +49,7 @@ const dictionaries = {
   },
   ar: {
     direction: 'rtl',
-    app_name: 'ديفيا موليا للموارد البشرية والرواتب',
+    app_name: 'يورو تراوزرز للموارد البشرية والرواتب',
     company: 'يورو تراوزرز',
     dashboard: 'لوحة التحكم',
     employees: 'الموظفون',
