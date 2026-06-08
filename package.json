@@ -8,7 +8,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+   "start": "node migrate.js && node app.js"
     "dev": "nodemon server.js",
     "migrate": "node database/migrate.js up",
     "migrate:fresh": "node database/migrate.js fresh",
