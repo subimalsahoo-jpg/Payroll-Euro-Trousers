@@ -143,7 +143,7 @@ INSERT INTO employees
    date_of_joining, bank_name, iban, routing_code, labour_card_no, is_active)
 VALUES
   (1, 1, 1, 1, 1, 'ET-0001', 'Rashid',  'Al Marri',  'male',   '1980-04-12', 'UAE',        'married', 'rashid.almarri@euro-trousers.example', '+971-50-0000001', 'active',    '2015-06-01', 'Emirates NBD',  'AE000000000000000000001', '302620122', 'LMC-0001', 1),
-  (2, 1, 1, 2, 2, 'ET-0002', 'Divya',   'Moolya',    'female', '1988-09-22', 'India',      'married', 'divya.moolya@euro-trousers.example',   '+971-50-0000002', 'active',    '2017-02-15', 'Emirates NBD',  'AE000000000000000000002', '302620122', 'LMC-0002', 1),
+  (2, 1, 1, 2, 2, 'ET-0002', 'Aisha',   'Al-Mansoori','female', '1988-09-22', 'UAE',        'married', 'aisha@euro-trousers.com',              '+971-50-0000002', 'active',    '2017-02-15', 'Emirates NBD',  'AE000000000000000000002', '302620122', 'LMC-0002', 1),
   (3, 1, 1, 3, 3, 'ET-0003', 'Suresh',  'Nair',      'male',   '1990-01-30', 'India',      'single',  'suresh.nair@euro-trousers.example',    '+971-50-0000003', 'active',    '2019-08-10', 'ADCB',          'AE000000000000000000003', '101010101', 'LMC-0003', 1),
   (4, 1, 1, 3, 4, 'ET-0004', 'Mariam',  'Hassan',    'female', '1992-11-05', 'Egypt',      'single',  'mariam.hassan@euro-trousers.example',  '+971-50-0000004', 'active',    '2020-03-01', 'ADCB',          'AE000000000000000000004', '101010101', 'LMC-0004', 1),
   (5, 1, 2, 4, 5, 'ET-0005', 'Imran',   'Khan',      'male',   '1985-07-19', 'Pakistan',   'married', 'imran.khan@euro-trousers.example',     '+971-50-0000005', 'active',    '2016-05-20', 'Mashreq',       'AE000000000000000000005', '203040506', 'LMC-0005', 1),
@@ -156,7 +156,7 @@ ON DUPLICATE KEY UPDATE first_name = VALUES(first_name);
 
 -- ---- Emergency contacts (sample) ----
 INSERT INTO employee_emergency_contacts (employee_id, contact_name, relationship, phone) VALUES
-  (2, 'Anil Moolya', 'Spouse',  '+971-50-1111111'),
+  (2, 'Khalid Al-Mansoori', 'Spouse',  '+971-50-1111111'),
   (3, 'Priya Nair',  'Sister',  '+971-50-2222222'),
   (5, 'Ayesha Khan', 'Spouse',  '+971-50-3333333')
 ON DUPLICATE KEY UPDATE contact_name = VALUES(contact_name);

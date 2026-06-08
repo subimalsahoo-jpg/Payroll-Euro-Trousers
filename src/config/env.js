@@ -49,7 +49,7 @@ const env = {
   db: {
     host: process.env.DB_HOST || '127.0.0.1',
     port: int('DB_PORT', 3306),
-    database: process.env.DB_NAME || 'divya_moolya_hrms',
+    database: process.env.DB_NAME || 'euro_trousers_hrms',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
     connectionLimit: int('DB_CONNECTION_LIMIT', 10),

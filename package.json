@@ -8,8 +8,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "prestart": "node database/migrate.js up",
-    "start": "node server.js",
+    "start": "node database/migrate.js up && node server.js",
     "dev": "nodemon server.js",
     "setup": "node database/migrate.js fresh && node database/migrate.js seed"
   },

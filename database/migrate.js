@@ -100,7 +100,7 @@ async function fresh() {
 function defaultUsers() {
   return [
     { company_id: 1, branch_id: 1, role_id: 1, employee_id: null, username: 'superadmin',  email: 'superadmin@euro-trousers.example', full_name: 'System Super Admin' },
-    { company_id: 1, branch_id: 1, role_id: 2, employee_id: 2,    username: 'hr.manager',  email: 'divya.moolya@euro-trousers.example', full_name: 'Divya Moolya' },
+    { company_id: 1, branch_id: 1, role_id: 2, employee_id: 2,    username: 'hr.manager',  email: 'aisha@euro-trousers.com', full_name: 'Aisha Al-Mansoori' },
     { company_id: 1, branch_id: 1, role_id: 3, employee_id: 4,    username: 'payroll',     email: 'mariam.hassan@euro-trousers.example', full_name: 'Mariam Hassan' },
     { company_id: 1, branch_id: 2, role_id: 4, employee_id: 5,    username: 'manager.imran', email: 'imran.khan@euro-trousers.example', full_name: 'Imran Khan' },
     { company_id: 1, branch_id: 2, role_id: 5, employee_id: 6,    username: 'arun.kumar',  email: 'arun.kumar@euro-trousers.example', full_name: 'Arun Kumar' },
